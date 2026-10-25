@@ -4,7 +4,7 @@
 
 Some posts reach r/popular because people care about them. Others get there because someone pushed them: bot-filled comment sections, comments that rocket to the top within minutes, old videos reposted with new captions whenever the news makes them useful. Reddit Coordination Watch collects the data needed to tell those apart, by looking at *how* content spreads rather than *what* it says.
 
-> **Status:** early. The data collector works; the analysis and detection layer is being built. Contributions welcome.
+> **Status:** early. The data collector is written but has not yet been tested against the live API (see Requirements below); the analysis and detection layer is still to be built. If you have API access and can try it, please open an issue with what you find.
 
 ## Why behavior, not content
 
