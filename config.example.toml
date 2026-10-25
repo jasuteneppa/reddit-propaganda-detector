@@ -1,0 +1,29 @@
+# Copy to config.toml and fill in the [reddit] section.
+
+[reddit]
+client_id = "YOUR_CLIENT_ID"
+client_secret = "YOUR_CLIENT_SECRET"
+# Reddit asks for a descriptive user agent that includes your username.
+user_agent = "coordination-watch/0.1 (research; by u/YOUR_USERNAME)"
+
+[collector]
+db_path = "watch.db"
+cycle_seconds = 300          # one full pass every 5 minutes
+popular_limit = 100          # how deep into r/popular to snapshot
+popular_geo = "GLOBAL"       # r/popular region; e.g. "FR", "US", "GLOBAL"
+subreddit_limit = 50         # posts per target subreddit
+max_comment_snapshots = 150  # comment-tree fetches per cycle (1 request each)
+max_author_fetches = 100     # account lookups per cycle (1 request each)
+comment_limit = 200          # comments pulled per tree snapshot
+
+# How often to re-snapshot a post's comments, by post age.
+# [max_age_hours, interval_minutes]; posts older than the last entry stop being tracked.
+comment_schedule = [[2, 5], [6, 15], [24, 60]]
+
+# A mix of news, politics, "viral" catch-alls and freakout-style subs.
+# Edit freely: the detector should see all sides.
+subreddits = [
+  "worldnews", "news", "europe", "france", "unitedkingdom", "politics",
+  "Conservative", "PublicFreakout", "interestingasfuck", "Damnthatsinteresting",
+  "BeAmazed", "nextfuckinglevel", "facepalm", "pics", "videos", "SipsTea",
+]
